@@ -13,15 +13,16 @@ public class Wordle {
 
     public static void main(String[] args) {
         Wordle game = new Wordle();
-        String word = game.getWord();
+        String word;
 
         Scanner scan = new Scanner(System.in);
-        String input;
-        do{
+        String input = "";
+        while(!input.equals("q") && !input.equals("Q")) {
+            word = game.getWord();
             game.runGame(word);
             System.out.print("Press any button to play again or 'q' to quit: ");
             input = scan.nextLine();
-        }while(input.equals("q") || !input.equals("Q"));
+        }
     }
 
     public void runGame(String word){
